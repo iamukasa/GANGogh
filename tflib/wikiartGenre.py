@@ -60,7 +60,7 @@ def make_generator(files, batch_size, n_classes):
                         curr = 0
                         random.shuffle(list(files[style]))
                     t0=time.time()
-                    image = scipy.misc.imread("{}/{}/{}.png".format(path, style, str(curr)),mode='RGB')
+                    image = scipy.misc.imread("{}/{}/{}.jpg".format(path, style, str(curr)),mode='RGB')
                     #image = scipy.misc.imresize(image,(DIM,DIM))
                     images[n % batch_size] = image.transpose(2,0,1)
                     labels[n % batch_size, int(styleLabel)] = 1
