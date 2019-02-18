@@ -13,11 +13,11 @@ DIM = 64
 path = os.path.normpath('/content/wikiart')
 
 #This dictionary should be updated to hold the absolute number of images associated with each genre used during training
-styles = {'hotdogs': 400}
+styles = {'potraits': 400}
 
-styleNum = {'hotdogs': 0,}
+styleNum = {'potraits': 0,}
 
-curPos = {'hotdogs': 0}
+curPos = {'potraits': 0}
 
 testNums = {}
 trainNums = {}
