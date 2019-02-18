@@ -33,21 +33,15 @@ genres = [('portrait',250),
 #Access the html of the page given a genre and pagenumber that are used to generate a url, from this html find the urls of all images hosted on the page using page layout as of June 2017, return a list of alls urls to paintings
 def soupit(j,genre):
     try:
-        url = "https://www.wikiart.org/en/paintings-by-genre/"+ genre+ "/" + str(j)
-        html = urllib.request.urlopen(url,features="lxml")
-        soup =  BeautifulSoup(html)
-        found = False
-        urls = []
-        for i in str(soup.findAll()).split():
-            if i == 'data':
-                found = True
-            if found == True:
-                if '}];' in i:
-                    break;
-                if 'https' in i:
-                    web = "http" + i[6:-2]
-                    urls.append(web)
-                    j = j+1
+        url ="https://www.wikiart.org/en/paintings-by-genre/"+genre+"?json=2&page="+str(j)
+        jsonP = urllib.request.urlopen(url,features="lxml")
+        data = json.loads(jsonP.read())
+        urls=[]
+
+
+        for artItem in data["Paintings"]:
+            urls.append(artItem["image"])
+
         return urls
     except Exception as e:
         print('Failed to find the following genre page combo: '+genre+str(j))
