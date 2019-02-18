@@ -10,53 +10,14 @@ import os
 DIM = 64
 
 #Set your own path to images
-path = os.path.normpath('/content/images')
+path = os.path.normpath('/content/drive/My Drive/data/hot_dog')
 
 #This dictionary should be updated to hold the absolute number of images associated with each genre used during training
-styles = {'abstract': 14999,
-          'animal-painting': 1798,
-          'cityscape': 6598,
-          'figurative': 4500,
-          'flower-painting': 1800,
-          'genre-painting': 14997,
-          'landscape': 15000,
-          'marina': 1800,
-          'mythological-painting': 2099,
-          'nude-painting-nu': 3000,
-          'portrait': 14999,
-          'religious-painting': 8400,
-          'still-life': 2996,
-          'symbolic-painting': 2999}
+styles = {'hotdogs': 400}
 
-styleNum = {'abstract': 0,
-            'animal-painting': 1,
-            'cityscape': 2,
-            'figurative': 3,
-            'flower-painting': 4,
-            'genre-painting': 5,
-            'landscape': 6,
-            'marina': 7,
-            'mythological-painting': 8,
-            'nude-painting-nu': 9,
-            'portrait': 10,
-            'religious-painting': 11,
-            'still-life': 12,
-            'symbolic-painting': 13}
+styleNum = {'hotdogs': 0,}
 
-curPos = {'abstract': 0,
-          'animal-painting': 0,
-          'cityscape': 0,
-          'figurative': 0,
-          'flower-painting': 0,
-          'genre-painting': 0,
-          'landscape': 0,
-          'marina': 0,
-          'mythological-painting': 0,
-          'nude-painting-nu': 0,
-          'portrait': 0,
-          'religious-painting': 0,
-          'still-life': 0,
-          'symbolic-painting': 0}
+curPos = {'hotdogs': 0}
 
 testNums = {}
 trainNums = {}
