@@ -105,7 +105,7 @@ def for_genre(genre,num):
         
 if __name__ == '__main__':
     for (a,b) in genres:
-        if not os.path.exists("/images/./"+a):
+        if not os.path.exists("images/"+a):
             os.mkdir(a)
         for_genre(a,b)
 
