@@ -34,7 +34,7 @@ genres = [('portrait',250),
 def soupit(j,genre):
     try:
         url = "https://www.wikiart.org/en/paintings-by-genre/"+ genre+ "/" + str(j)
-        html = urllib.request.urlopen(url)
+        html = urllib.request.urlopen(url,features="lxml")
         soup =  BeautifulSoup(html)
         found = False
         urls = []
