@@ -228,10 +228,10 @@ with tf.Session(config=tf.ConfigProto(allow_soft_placement=True)) as session:
     sample_labels_conv = tf.placeholder(tf.int32, shape=[BATCH_SIZE,CLASSES])
     
    
-    split_real_data_conv = tf.split(all_real_data_conv, len(DEVICES))
-    split_real_label_conv = tf.split(all_real_label_conv, len(DEVICES))
-    split_generated_labels_conv = tf.split(generated_labels_conv, len(DEVICES))
-    split_sample_labels_conv = tf.split(sample_labels_conv, len(DEVICES))
+    split_real_data_conv = tf.split(0, len(DEVICES), all_real_data_conv)
+    split_real_data_label = tf.split(0, len(DEVICES), all_real_data_conv)
+    split_generated_labels = tf.split(0, len(DEVICES), generated_labels_conv)
+    split_sample_labels = tf.split(0, len(DEVICES), sample_labels_conv)
    
 
     gen_costs, disc_costs = [],[]
