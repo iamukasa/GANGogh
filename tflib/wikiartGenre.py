@@ -10,14 +10,14 @@ import os
 DIM = 64
 
 #Set your own path to images
-path = os.path.normpath('/content/wikiart')
+path = os.path.normpath('/content/africandigitalart')
 
 #This dictionary should be updated to hold the absolute number of images associated with each genre used during training
-styles = {'potraits': 400}
+styles = {'africandigitalart': 615}
 
-styleNum = {'potraits': 0,}
+styleNum = {'africandigitalart': 0,}
 
-curPos = {'potraits': 0}
+curPos = {'africandigitalart': 0}
 
 testNums = {}
 trainNums = {}
