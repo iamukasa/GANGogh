@@ -227,16 +227,12 @@ with tf.Session(config=tf.ConfigProto(allow_soft_placement=True)) as session:
     generated_labels_conv = tf.placeholder(tf.int32, shape=[BATCH_SIZE,CLASSES])
     sample_labels_conv = tf.placeholder(tf.int32, shape=[BATCH_SIZE,CLASSES])
     
-    if tf.__version__.startswith('1.'):
-        split_real_data_conv = tf.split(all_real_data_conv, len(DEVICES))
-        split_real_label_conv = tf.split(all_real_label_conv, len(DEVICES))
-        split_generated_labels_conv = tf.split(generated_labels_conv, len(DEVICES))
-        split_sample_labels_conv = tf.split(sample_labels_conv, len(DEVICES))
-    else:
-        split_real_data_conv = tf.split(0, len(DEVICES), all_real_data_conv)
-        split_real_data_label_conv = tf.split(0, len(DEVICES), all_real_label_conv)
-        split_generated_labels_conv = tf.split(0, len(DEVICES), generated_labels_conv)
-        split_sample_labels_conv = tf.split(0, len(DEVICES), sample_labels_conv)
+   
+    split_real_data_conv = tf.split(all_real_data_conv, len(DEVICES))
+    split_real_label_conv = tf.split(all_real_label_conv, len(DEVICES))
+    split_generated_labels_conv = tf.split(generated_labels_conv, len(DEVICES))
+    split_sample_labels_conv = tf.split(sample_labels_conv, len(DEVICES))
+   
 
     gen_costs, disc_costs = [],[]
 
