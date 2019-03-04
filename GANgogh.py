@@ -229,8 +229,8 @@ with tf.Session(config=tf.ConfigProto(allow_soft_placement=True)) as session:
     
    
     split_real_data_conv = tf.split(0, len(DEVICES), all_real_data_conv)
-    split_real_data_label = tf.split(0, len(DEVICES), all_real_data_conv)
-    split_generated_labels = tf.split(0, len(DEVICES), generated_labels_conv)
+    split_real_data_label_conv = tf.split(0, len(DEVICES), all_real_data_conv)
+    split_generated_labels_conv = tf.split(0, len(DEVICES), generated_labels_conv)
     split_sample_labels = tf.split(0, len(DEVICES), sample_labels_conv)
    
 
